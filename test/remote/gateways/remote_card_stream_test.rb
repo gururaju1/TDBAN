@@ -1,10 +1,10 @@
 require 'test_helper'
 
-class RemoteCardStreamTest < Test::Unit::TestCase
+class RemoteTdBankTest < Test::Unit::TestCase
   def setup
     Base.mode = :test
 
-    @gateway = CardStreamGateway.new(fixtures(:card_stream))
+    @gateway = TdBankGateway.new(fixtures(:card_stream))
 
     @amex = credit_card('374245455400001',
       :month => '12',
@@ -310,7 +310,7 @@ class RemoteCardStreamTest < Test::Unit::TestCase
   end
 
   def test_invalid_login
-    gateway = CardStreamGateway.new(
+    gateway = TdBankGateway.new(
       :login => '',
       :shared_secret => ''
     )

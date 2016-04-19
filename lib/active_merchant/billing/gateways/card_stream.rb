@@ -1,16 +1,16 @@
 module ActiveMerchant #:nodoc:
   module Billing #:nodoc:
-    class CardStreamGateway < Gateway
+    class TdBankGateway < Gateway
 
       THREEDSECURE_REQUIRED_DEPRECATION_MESSAGE = "Specifying the :threeDSRequired initialization option is deprecated. Please use the `:threeds_required => true` *transaction* option instead."
 
-      self.test_url = self.live_url = 'https://gateway.cardstream.com/direct/'
+      self.test_url = self.live_url = 'https://gateway.TdBank.com/direct/'
       self.money_format = :cents
       self.default_currency = 'GBP'
       self.supported_countries = ['GB', 'US', 'CH', 'SE', 'SG', 'NO', 'JP', 'IS', 'HK', 'NL', 'CZ', 'CA', 'AU']
       self.supported_cardtypes = [:visa, :master, :american_express, :diners_club, :discover, :jcb, :maestro, :solo, :switch]
-      self.homepage_url = 'http://www.cardstream.com/'
-      self.display_name = 'CardStream'
+      self.homepage_url = 'http://www.TdBank.com/'
+      self.display_name = 'TdBank'
 
       CURRENCY_CODES = {
         "AED" => "784",
